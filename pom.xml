@@ -151,6 +151,8 @@
         <module>eip-wire-tap</module>
         <module>eip-splitter</module>
         <module>eip-aggregator</module>
+        <module>federated-identity</module>
+
     </modules>
 
     <dependencyManagement>
