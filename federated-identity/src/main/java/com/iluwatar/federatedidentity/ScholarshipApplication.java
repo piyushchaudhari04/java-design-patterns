@@ -37,7 +37,10 @@ public class ScholarshipApplication {
   }
 
   public void login(Student student){
-    identityProvider.authenticate(student);
-    
+    if(identityProvider.authenticate(student)){
+      LOGGER.info("successfully logged in");
+    }else {
+      LOGGER.info("Invalid User");
+    }
   }
 }

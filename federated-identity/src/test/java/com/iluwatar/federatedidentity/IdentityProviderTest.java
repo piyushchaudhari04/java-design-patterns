@@ -54,9 +54,9 @@ public class IdentityProviderTest {
   public void authenticateTest(){
     Student student=new Student("piyush","abcd");
 
-    identityProvider.authenticate(student);
+    boolean result=identityProvider.authenticate(student);
 
-    Assert.assertEquals(true,identityProvider.isValid());
+    Assert.assertEquals(true,result);
   }
 
   @Test

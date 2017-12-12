@@ -25,19 +25,19 @@
 package com.iluwatar.federatedidentity;
 
 public class IdentityProvider {
-  private boolean isValid;
+
   private IdentityProviderDatabase identityProviderDatabase;
 
   IdentityProvider(IdentityProviderDatabase identityProviderDatabase) {
     this.identityProviderDatabase = identityProviderDatabase;
   }
 
-  public void authenticate(Student student) {
+  public boolean authenticate(Student student) {
 
     if (identityProviderDatabase.isValidUsername(student.getUsername()) && isValidPassword(student)) {
-      setValid(true);
+      return true;
     } else {
-      setValid(false);
+      return false;
     }
   }
 
@@ -51,11 +51,4 @@ public class IdentityProvider {
     }
   }
 
-  public boolean isValid() {
-    return isValid;
-  }
-
-  public void setValid(boolean valid) {
-    isValid = valid;
-  }
 }
